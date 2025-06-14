@@ -1,3 +1,4 @@
+import { Card } from "@/components/ui/card";
 import RoomCard, { RoomCardProps } from "./RoomCard";
 
 interface FloorSectionProps {
@@ -7,13 +8,13 @@ interface FloorSectionProps {
 
 export default function FloorSection({ floor, rooms }: FloorSectionProps) {
   return (
-    <section className="mb-10">
-      <h2 className="text-xl font-bold mb-4 pl-1">{floor}</h2>
+    <Card className="p-4 mb-5 gap-2">
+      <h2 className="text-xl font-bold pl-1">{floor}</h2>
       <div className="flex flex-wrap gap-6">
         {rooms.map((room, idx) => (
           <RoomCard key={idx} {...room} />
         ))}
       </div>
-    </section>
+    </Card>
   );
 } 

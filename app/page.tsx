@@ -17,8 +17,8 @@ const reservations = [
 
 export default function Home() {
   return (
-    <main className="p-6 bg-muted min-h-screen">
-      <div className="max-w-6xl mx-auto">
+    <main className="p-6 min-h-screen">
+      <section className="max-w-6xl mx-auto">
         <NoticeBar message="공지 사항: 객실청소 점검(14:00) 오늘 체크인 5건 예약 문의 2건" />
         {floors.map((f, idx) => (
           <FloorSection key={idx} floor={f.floor} rooms={f.rooms} />
@@ -27,7 +27,7 @@ export default function Home() {
           <div className="mb-2 text-base font-semibold">다가오는 예약 대실 2 숙박 1</div>
           <ReservationList reservations={reservations} />
         </div>
-      </div>
+      </section>
     </main>
   );
 }
